@@ -1,6 +1,6 @@
 {
   "name": "taro-poster",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "use for drawing poster by the way of config",
   "main": "index.js",
   "scripts": {

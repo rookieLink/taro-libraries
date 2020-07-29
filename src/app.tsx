@@ -1,5 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import Index from './pages/index'
+import {createPoster} from 'taro-poster'
 
 import './app.scss'
 
@@ -11,7 +12,9 @@ import './app.scss'
 
 class App extends Component {
 
-  componentDidMount () {}
+  componentDidMount () {
+    createPoster()
+  }
 
   componentDidShow () {}
 

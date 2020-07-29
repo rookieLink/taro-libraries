@@ -1,0 +1,1 @@
+export const createPoster =  () => {console.log('taro-poster')}
