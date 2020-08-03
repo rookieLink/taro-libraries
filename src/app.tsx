@@ -1,6 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import Index from './pages/index'
-import {createPoster} from 'taro-poster'
+// import createPoster  from 'taro-poster'
+import createPoster  from './../projects/taro-poster/index'
 
 import './app.scss'
 
@@ -13,6 +14,7 @@ import './app.scss'
 class App extends Component {
 
   componentDidMount () {
+    console.log(createPoster)
     createPoster()
   }
 

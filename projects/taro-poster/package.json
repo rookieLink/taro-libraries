@@ -1,10 +1,11 @@
 {
   "name": "taro-poster",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "use for drawing poster by the way of config",
-  "main": "index.js",
+  "main": "./index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:weapp": "taro build --type weapp"
   },
   "keywords": [
     "taro",
@@ -13,5 +14,23 @@
     "canvas"
   ],
   "author": "rookielink",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@tarojs/components": "2.0.7",
+    "@tarojs/components-qa": "2.0.7",
+    "@tarojs/router": "2.0.7",
+    "@tarojs/taro": "2.0.7",
+    "@tarojs/taro-alipay": "2.0.7",
+    "@tarojs/taro-h5": "2.0.7",
+    "@tarojs/taro-qq": "2.0.7",
+    "@tarojs/taro-quickapp": "2.0.7",
+    "@tarojs/taro-rn": "2.0.7",
+    "@tarojs/taro-swan": "2.0.7",
+    "@tarojs/taro-tt": "2.0.7",
+    "@tarojs/taro-weapp": "2.0.7"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
 }

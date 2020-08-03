@@ -1,1 +1,7 @@
-export const createPoster =  () => {console.log('taro-poster')}
+// import mainfun from './dist/main'
+import mainfun from './src/main'
+console.log(typeof mainfun)
+
+// mainfun()
+export default mainfun
+

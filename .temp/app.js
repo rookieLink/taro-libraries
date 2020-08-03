@@ -1,6 +1,7 @@
 import Taro, { Component } from "@tarojs/taro-h5";
 
-import { createPoster } from 'taro-poster';
+// import {createPoster} from 'taro-poster'
+import createPoster from "../projects/taro-poster/index";
 import './app.scss';
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -42,6 +43,7 @@ class App extends Component {
     Taro._$app = this;
   }
   componentDidMount() {
+    // console.log(createPoster)
     createPoster();
     this.componentDidShow();
   }
