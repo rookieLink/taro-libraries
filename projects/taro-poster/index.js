@@ -1,5 +1,5 @@
-// import mainfun from './dist/main'
-import mainfun from './src/main'
+import mainfun from './dist/main'
+// import mainfun from './src/main'
 console.log(typeof mainfun)
 
 // mainfun()

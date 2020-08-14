@@ -1,6 +1,10 @@
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Text, Canvas } from '@tarojs/components'
 import './index.scss'
+// import  createPoster  from 'taro-poster';
+import createPoster from './../../../projects/taro-poster/index'
+
+import bg from './../../../assests/image/poster-bg.png'
 
 export default class Index extends Component {
 
@@ -10,7 +14,15 @@ export default class Index extends Component {
 
   componentWillUnmount () { }
 
-  componentDidShow () { }
+  componentDidShow () {
+    // const ctx = Taro.createCanvasContext('canvas-show', this)
+
+    // // 开始绘制背景图
+    // ctx.drawImage(bg, 0, 0, 200, 300)
+    
+    // ctx.draw(false, () => { setTimeout(() => {}, 500)} )
+    createPoster({canvasId: 'canvas-show', canvasWidth: 750, canvasHeight: 300, bg}, this)
+  }
 
   componentDidHide () { }
 
@@ -29,6 +41,8 @@ export default class Index extends Component {
     return (
       <View className='index'>
         <Text>Hello world!</Text>
+        <Canvas className="canvas-poster" canvas-id="canvas-show"></Canvas>
+
       </View>
     )
   }

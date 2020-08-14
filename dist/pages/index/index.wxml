@@ -1,4 +1,5 @@
 <block wx:if="{{$taroCompReady}}">
     <view class="index"><text>Hello world!</text>
+        <canvas class="canvas-poster" canvas-id="canvas-show"></canvas>
     </view>
 </block>

@@ -1,4 +1,5 @@
 require("./runtime");
+require("./common");
 require("./vendors");
 require("./taro");
 
@@ -40,6 +41,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 // import createPoster  from 'taro-poster'
 
+// import {fun as createPoster}  from './../projects/taro-poster/dist/buldle'
+
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -78,7 +81,7 @@ var _App = function (_BaseComponent) {
     key: "componentDidMount",
     value: function componentDidMount() {
       console.log(_index2.default);
-      (0, _index2.default)();
+      // createPoster()
     }
   }, {
     key: "componentDidShow",
@@ -111,68 +114,6 @@ _taroWeapp2.default.initPxTransform({
     "828": 0.905
   }
 });
-
-/***/ }),
-
-/***/ "./projects/taro-poster/index.js":
-/*!***************************************!*\
-  !*** ./projects/taro-poster/index.js ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; // import mainfun from './dist/main'
-
-
-var _main = __webpack_require__(/*! ./src/main */ "./projects/taro-poster/src/main.js");
-
-var _main2 = _interopRequireDefault(_main);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-console.log(typeof _main2.default === 'undefined' ? 'undefined' : _typeof(_main2.default));
-
-// mainfun()
-exports.default = _main2.default;
-
-/***/ }),
-
-/***/ "./projects/taro-poster/src/main.js":
-/*!******************************************!*\
-  !*** ./projects/taro-poster/src/main.js ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.fun = undefined;
-
-var _taroWeapp = __webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js");
-
-var _taroWeapp2 = _interopRequireDefault(_taroWeapp);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var fun = exports.fun = function fun() {
-  _taroWeapp2.default.showLoading();
-  setTimeout(function () {
-    _taroWeapp2.default.hideLoading();
-  }, 5000);
-};
-
-exports.default = fun;
 
 /***/ }),
 
@@ -219,4 +160,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[["./src/app.tsx","runtime","taro","vendors"]]]);;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+},[["./src/app.tsx","runtime","taro","vendors","common"]]]);;;;;;;;;;;;;;;

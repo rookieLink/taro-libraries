@@ -2,8 +2,10 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import Index from './pages/index'
 // import createPoster  from 'taro-poster'
 import createPoster  from './../projects/taro-poster/index'
+// import {fun as createPoster}  from './../projects/taro-poster/dist/buldle'
 
 import './app.scss'
+import { Canvas } from '@tarojs/components'
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -15,7 +17,7 @@ class App extends Component {
 
   componentDidMount () {
     console.log(createPoster)
-    createPoster()
+    // createPoster()
   }
 
   componentDidShow () {}

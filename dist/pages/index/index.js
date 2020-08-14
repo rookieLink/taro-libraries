@@ -1,5 +1,16 @@
 (wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["pages/index/index"],{
 
+/***/ "./assests/image/poster-bg.png":
+/*!*************************************!*\
+  !*** ./assests/image/poster-bg.png ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "_/assests/image/poster-bg.png";
+
+/***/ }),
+
 /***/ "./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/index.tsx?taro&type=script&parse=PAGE&":
 /*!*************************************************************************************************************************************************!*\
   !*** ./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/index.tsx?taro&type=script&parse=PAGE& ***!
@@ -19,12 +30,22 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
 var _class, _temp2;
+// import  createPoster  from 'taro-poster';
+
 
 var _taroWeapp = __webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js");
 
 var _taroWeapp2 = _interopRequireDefault(_taroWeapp);
 
 __webpack_require__(/*! ./index.scss */ "./src/pages/index/index.scss");
+
+var _index = __webpack_require__(/*! ../../../projects/taro-poster/index */ "./projects/taro-poster/index.js");
+
+var _index2 = _interopRequireDefault(_index);
+
+var _posterBg = __webpack_require__(/*! ./../../../assests/image/poster-bg.png */ "./assests/image/poster-bg.png");
+
+var _posterBg2 = _interopRequireDefault(_posterBg);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -54,9 +75,9 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
   }
 
   _createClass(Index, [{
-    key: '_constructor',
+    key: "_constructor",
     value: function _constructor() {
-      _get(Index.prototype.__proto__ || Object.getPrototypeOf(Index.prototype), '_constructor', this).apply(this, arguments);
+      _get(Index.prototype.__proto__ || Object.getPrototypeOf(Index.prototype), "_constructor", this).apply(this, arguments);
       /**
        * 指定config的类型声明为: Taro.Config
        *
@@ -67,22 +88,28 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       this.$$refs = new _taroWeapp2.default.RefsArray();
     }
   }, {
-    key: 'componentWillMount',
+    key: "componentWillMount",
     value: function componentWillMount() {}
   }, {
-    key: 'componentDidMount',
+    key: "componentDidMount",
     value: function componentDidMount() {}
   }, {
-    key: 'componentWillUnmount',
+    key: "componentWillUnmount",
     value: function componentWillUnmount() {}
   }, {
-    key: 'componentDidShow',
-    value: function componentDidShow() {}
+    key: "componentDidShow",
+    value: function componentDidShow() {
+      // const ctx = Taro.createCanvasContext('canvas-show', this)
+      // // 开始绘制背景图
+      // ctx.drawImage(bg, 0, 0, 200, 300)
+      // ctx.draw(false, () => { setTimeout(() => {}, 500)} )
+      (0, _index2.default)({ canvasId: 'canvas-show', canvasWidth: 750, canvasHeight: 300, bg: _posterBg2.default }, this);
+    }
   }, {
-    key: 'componentDidHide',
+    key: "componentDidHide",
     value: function componentDidHide() {}
   }, {
-    key: '_createData',
+    key: "_createData",
     value: function _createData() {
       this.__state = arguments[0] || this.state || {};
       this.__props = arguments[1] || this.props || {};
@@ -174,4 +201,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[["./src/pages/index/index.tsx","runtime","taro","vendors"]]]);
+},[["./src/pages/index/index.tsx","runtime","taro","vendors","common"]]]);
