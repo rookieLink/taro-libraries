@@ -4,7 +4,7 @@ import './index.scss'
 // import  createPoster  from 'taro-poster';
 import createPoster from './../../../projects/taro-poster/index'
 
-import bg from './../../../assests/image/poster-bg.png'
+import bg from './../../../assests/image/invite-poster-bg.png'
 
 export default class Index extends Component {
 
@@ -21,7 +21,29 @@ export default class Index extends Component {
     // ctx.drawImage(bg, 0, 0, 200, 300)
     
     // ctx.draw(false, () => { setTimeout(() => {}, 500)} )
-    createPoster({canvasId: 'canvas-show', canvasWidth: 750, canvasHeight: 300, bg}, this)
+    createPoster({
+      canvasId: 'canvas-show', 
+      canvasWidth: 750, 
+      canvasHeight: 1334, 
+      bg,
+      elements: [
+        // toPx(89), toPx(77), toPx(45), 0, 360, false
+        {type: 'FILLCIRCLE', config: {x: 89, y: 77, r: 45, sAngle: 0, eAngle: 360, counterclockwise: false}, style: {color: '#ffffff'}},
+        {type: 'CIRCLE', config: {x: 89, y: 77, r: 45, sAngle: 0, eAngle: 360, counterclockwise: false}, style: {color: '#ffffff', lineWidth: 0 },
+          elements:[
+            {type: 'IMAGE', config: {x: 10, y: 16, height: 200, width: 200, source: bg}}
+          ]
+        },
+        {type: 'TEXT', config: {x: 152, y: 70, text: 'rookielink'}, style: {color: '#ffffff', fontSize: 40}},
+        {type: 'TEXT', config: {x: 152, y: 110, text: '邀请您参加鉴定'}, style: {color: '#ffffff', fontSize: 24}},
+
+        // {type: 'RECT', config: {x: 152, y: 110, height: 20, width: 50}, style: {color: 'red', lineWidth: 1}, elements: [
+        //   {type: 'FILLRECT', config: {x: 20, y: 90, height: 20, width: 50}, style: {color: 'green'}}
+        // ]},
+        // {type: 'FILLRECT', config: {x: 20, y: 140, height: 20, width: 50}, style: {color: 'gray'}},
+        // {type: 'IMAGE', config: {x: 20, y: 180, height: 800, width: 300, source: bg}}
+      ]
+    }, this)
   }
 
   componentDidHide () { }
@@ -40,8 +62,8 @@ export default class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
-        <Canvas className="canvas-poster" canvas-id="canvas-show"></Canvas>
+        <Text>绘制海报</Text>
+        <Canvas className="canvas-poster" canvas-id="canvas-show" style="width:750rpx; height: 1334rpx"></Canvas>
 
       </View>
     )

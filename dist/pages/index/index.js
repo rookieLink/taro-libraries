@@ -1,13 +1,13 @@
 (wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["pages/index/index"],{
 
-/***/ "./assests/image/poster-bg.png":
-/*!*************************************!*\
-  !*** ./assests/image/poster-bg.png ***!
-  \*************************************/
+/***/ "./assests/image/invite-poster-bg.png":
+/*!********************************************!*\
+  !*** ./assests/image/invite-poster-bg.png ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "_/assests/image/poster-bg.png";
+module.exports = __webpack_require__.p + "_/assests/image/invite-poster-bg.png";
 
 /***/ }),
 
@@ -43,9 +43,9 @@ var _index = __webpack_require__(/*! ../../../projects/taro-poster/index */ "./p
 
 var _index2 = _interopRequireDefault(_index);
 
-var _posterBg = __webpack_require__(/*! ./../../../assests/image/poster-bg.png */ "./assests/image/poster-bg.png");
+var _invitePosterBg = __webpack_require__(/*! ./../../../assests/image/invite-poster-bg.png */ "./assests/image/invite-poster-bg.png");
 
-var _posterBg2 = _interopRequireDefault(_posterBg);
+var _invitePosterBg2 = _interopRequireDefault(_invitePosterBg);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -103,7 +103,17 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       // // 开始绘制背景图
       // ctx.drawImage(bg, 0, 0, 200, 300)
       // ctx.draw(false, () => { setTimeout(() => {}, 500)} )
-      (0, _index2.default)({ canvasId: 'canvas-show', canvasWidth: 750, canvasHeight: 300, bg: _posterBg2.default }, this);
+      (0, _index2.default)({
+        canvasId: 'canvas-show',
+        canvasWidth: 750,
+        canvasHeight: 1334,
+        bg: _invitePosterBg2.default,
+        elements: [
+        // toPx(89), toPx(77), toPx(45), 0, 360, false
+        { type: 'FILLCIRCLE', config: { x: 89, y: 77, r: 45, sAngle: 0, eAngle: 360, counterclockwise: false }, style: { color: '#ffffff' } }, { type: 'CIRCLE', config: { x: 89, y: 77, r: 45, sAngle: 0, eAngle: 360, counterclockwise: false }, style: { color: '#ffffff', lineWidth: 0 },
+          elements: [{ type: 'IMAGE', config: { x: 10, y: 16, height: 200, width: 200, source: _invitePosterBg2.default } }]
+        }, { type: 'TEXT', config: { x: 152, y: 70, text: 'rookielink' }, style: { color: '#ffffff', fontSize: 40 } }, { type: 'TEXT', config: { x: 152, y: 110, text: '邀请您参加鉴定' }, style: { color: '#ffffff', fontSize: 24 } }]
+      }, this);
     }
   }, {
     key: "componentDidHide",

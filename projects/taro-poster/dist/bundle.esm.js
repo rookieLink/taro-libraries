@@ -1,13 +1,6 @@
-'use strict';
+import Taro from '@tarojs/taro';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var Taro = require('@tarojs/taro');
-var Taro__default = _interopDefault(Taro);
-
-const { screenWidth } = Taro__default.getSystemInfoSync();
+const { screenWidth } = Taro.getSystemInfoSync();
 
 const toPx = function(nrpx = 0) { // 统一算出canvas的单位长度
   // (screenWidth / 750) * npx 设计图大小npx 转canvas px
@@ -100,7 +93,7 @@ function _drawFillCircle({x, y, r, sAngle=0, eAngle=360, counterclockwise=false}
 
 const fun =  function ({canvasId, canvasHeight, canvasWidth, bg, elements=[]}, context, callback=() => {}) {
   console.log(canvasId, canvasHeight, canvasWidth, bg, context);
-  const ctx = Taro__default.createCanvasContext(canvasId, context);
+  const ctx = Taro.createCanvasContext(canvasId, context);
 
   // 开始绘制背景图
   // ctx.clip()
@@ -110,5 +103,5 @@ const fun =  function ({canvasId, canvasHeight, canvasWidth, bg, elements=[]}, c
   ctx.draw(false, () => { setTimeout(() => callback(), 500);} );
 };
 
-exports.default = fun;
-exports.fun = fun;
+export default fun;
+export { fun };

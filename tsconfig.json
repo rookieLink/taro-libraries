@@ -2,7 +2,7 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "module": "commonjs",
+    "module": "ES2015",
     "removeComments": false,
     "preserveConstEnums": true,
     "moduleResolution": "node",
@@ -15,7 +15,7 @@
     "strictNullChecks": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "rootDir": ".",
+    "rootDir": "./projects/taro-poster/src",
     "jsx": "preserve",
     "jsxFactory": "Taro.createElement",
     "allowJs": true,
@@ -23,7 +23,8 @@
     "typeRoots": [
       "node_modules/@types",
       "global.d.ts"
-    ]
+    ],
+    "declaration": true
   },
   "exclude": [
     "node_modules",
