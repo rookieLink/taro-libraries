@@ -1,5 +1,5 @@
 <block wx:if="{{$taroCompReady}}">
-    <view class="index"><text>绘制海报</text>
+    <view class="index"><text bindtap="drawPoster" data-e-tap-so="this">绘制海报</text>
         <canvas class="canvas-poster" canvas-id="canvas-show" style="width:750rpx; height: 1334rpx"></canvas>
     </view>
 </block>

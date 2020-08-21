@@ -1,16 +1,5 @@
 (wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["pages/index/index"],{
 
-/***/ "./assests/image/invite-poster-bg.png":
-/*!********************************************!*\
-  !*** ./assests/image/invite-poster-bg.png ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "_/assests/image/invite-poster-bg.png";
-
-/***/ }),
-
 /***/ "./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js?!./src/pages/index/index.tsx?taro&type=script&parse=PAGE&":
 /*!*************************************************************************************************************************************************!*\
   !*** ./node_modules/@tarojs/mini-runner/dist/loaders/wxTransformerLoader.js??ref--6-0!./src/pages/index/index.tsx?taro&type=script&parse=PAGE& ***!
@@ -42,10 +31,6 @@ __webpack_require__(/*! ./index.scss */ "./src/pages/index/index.scss");
 var _index = __webpack_require__(/*! ../../../projects/taro-poster/index */ "./projects/taro-poster/index.js");
 
 var _index2 = _interopRequireDefault(_index);
-
-var _invitePosterBg = __webpack_require__(/*! ./../../../assests/image/invite-poster-bg.png */ "./assests/image/invite-poster-bg.png");
-
-var _invitePosterBg2 = _interopRequireDefault(_invitePosterBg);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -103,17 +88,104 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
       // // 开始绘制背景图
       // ctx.drawImage(bg, 0, 0, 200, 300)
       // ctx.draw(false, () => { setTimeout(() => {}, 500)} )
-      (0, _index2.default)({
-        canvasId: 'canvas-show',
-        canvasWidth: 750,
-        canvasHeight: 1334,
-        bg: _invitePosterBg2.default,
-        elements: [
-        // toPx(89), toPx(77), toPx(45), 0, 360, false
-        { type: 'FILLCIRCLE', config: { x: 89, y: 77, r: 45, sAngle: 0, eAngle: 360, counterclockwise: false }, style: { color: '#ffffff' } }, { type: 'CIRCLE', config: { x: 89, y: 77, r: 45, sAngle: 0, eAngle: 360, counterclockwise: false }, style: { color: '#ffffff', lineWidth: 0 },
-          elements: [{ type: 'IMAGE', config: { x: 10, y: 16, height: 200, width: 200, source: _invitePosterBg2.default } }]
-        }, { type: 'TEXT', config: { x: 152, y: 70, text: 'rookielink' }, style: { color: '#ffffff', fontSize: 40 } }, { type: 'TEXT', config: { x: 152, y: 110, text: '邀请您参加鉴定' }, style: { color: '#ffffff', fontSize: 24 } }]
-      }, this);
+      (0, _index2.default)('canvas-show', {
+        "type": "MAIN",
+        "label": "海报整体配置",
+        "width": "750",
+        "height": "1334",
+        "backgroundColor": "pink",
+        "elements": [{
+          "type": "IMAGE",
+          "label": "背景图片",
+          "url": "https://oss.turingsenseai.com/1597910548470148198.png",
+          "x": "0",
+          "y": "0",
+          "width": "750",
+          "height": "1334"
+        }, {
+          "type": "FILLRECT",
+          "label": "头像底部",
+          "x": "150",
+          "y": "150",
+          "r": "40",
+          "sAngle": "0",
+          "eAngle": "360",
+          "backgroundColor": "#ffffff",
+          "opacity": "1"
+        }, {
+          "type": "IMAGE",
+          "label": "头像显示",
+          "url": "https://oss.turingsenseai.com/1597910548470148198.png",
+          "x": "112",
+          "y": "112",
+          "width": "76",
+          "height": "76",
+          "borderRadius": "76"
+        }, {
+          "type": "TEXT",
+          "label": "昵称",
+          "x": "220",
+          "y": "140",
+          "text": "rookieLink",
+          "fontColor": "#ffffff",
+          "fontSize": "30",
+          "textAlign": "left",
+          "lineNum": "1"
+        }]
+      }, this.$scope, function () {
+        console.log('绘制成功！');
+      });
+    }
+  }, {
+    key: "drawPoster",
+    value: function drawPoster() {
+      (0, _index2.default)('canvas-show', {
+        "type": "MAIN",
+        "label": "海报整体配置",
+        "width": "750",
+        "height": "1334",
+        "backgroundColor": "pink",
+        "elements": [{
+          "type": "IMAGE",
+          "label": "背景图片",
+          "url": "https://oss.turingsenseai.com/1597910548470148198.png",
+          "x": "0",
+          "y": "0",
+          "width": "750",
+          "height": "1334"
+        }, {
+          "type": "FILLRECT",
+          "label": "头像底部",
+          "x": "150",
+          "y": "150",
+          "r": "40",
+          "sAngle": "0",
+          "eAngle": "360",
+          "backgroundColor": "#ffffff",
+          "opacity": "1"
+        }, {
+          "type": "IMAGE",
+          "label": "头像显示",
+          "url": "https://oss.turingsenseai.com/1597910548470148198.png",
+          "x": "112",
+          "y": "112",
+          "width": "76",
+          "height": "76",
+          "borderRadius": "76"
+        }, {
+          "type": "TEXT",
+          "label": "昵称",
+          "x": "220",
+          "y": "140",
+          "text": "rookieLink",
+          "fontColor": "#ffffff",
+          "fontSize": "30",
+          "textAlign": "left",
+          "lineNum": "1"
+        }]
+      }, this, function () {
+        console.log('绘制成功！');
+      });
     }
   }, {
     key: "componentDidHide",
@@ -132,7 +204,7 @@ var Index = (_temp2 = _class = function (_BaseComponent) {
   }]);
 
   return Index;
-}(_taroWeapp.Component), _class.$$events = [], _class.$$componentPath = "pages/index/index", _temp2);
+}(_taroWeapp.Component), _class.$$events = ["drawPoster"], _class.$$componentPath = "pages/index/index", _temp2);
 exports.default = Index;
 
 Component(__webpack_require__(/*! @tarojs/taro-weapp */ "./node_modules/@tarojs/taro-weapp/index.js").default.createComponent(Index, true));

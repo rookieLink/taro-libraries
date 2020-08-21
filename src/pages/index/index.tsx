@@ -21,32 +21,117 @@ export default class Index extends Component {
     // ctx.drawImage(bg, 0, 0, 200, 300)
     
     // ctx.draw(false, () => { setTimeout(() => {}, 500)} )
-    createPoster({
-      canvasId: 'canvas-show', 
-      canvasWidth: 750, 
-      canvasHeight: 1334, 
-      bg,
-      elements: [
-        // toPx(89), toPx(77), toPx(45), 0, 360, false
-        {type: 'FILLCIRCLE', config: {x: 89, y: 77, r: 45, sAngle: 0, eAngle: 360, counterclockwise: false}, style: {color: '#ffffff'}},
-        {type: 'CIRCLE', config: {x: 89, y: 77, r: 45, sAngle: 0, eAngle: 360, counterclockwise: false}, style: {color: '#ffffff', lineWidth: 0 },
-          elements:[
-            {type: 'IMAGE', config: {x: 10, y: 16, height: 200, width: 200, source: bg}}
-          ]
+    createPoster('canvas-show', {
+      "type": "MAIN",
+      "label": "海报整体配置",
+      "width": "750",
+      "height": "1334",
+      "backgroundColor": "pink",
+      "elements": [
+        {
+          "type": "IMAGE",
+          "label": "背景图片",
+          "url": "https://oss.turingsenseai.com/1597910548470148198.png",
+          "x": "0",
+          "y": "0",
+          "width": "750",
+          "height": "1334"
         },
-        {type: 'TEXT', config: {x: 152, y: 70, text: 'rookielink'}, style: {color: '#ffffff', fontSize: 40}},
-        {type: 'TEXT', config: {x: 152, y: 110, text: '邀请您参加鉴定'}, style: {color: '#ffffff', fontSize: 24}},
-
-        // {type: 'RECT', config: {x: 152, y: 110, height: 20, width: 50}, style: {color: 'red', lineWidth: 1}, elements: [
-        //   {type: 'FILLRECT', config: {x: 20, y: 90, height: 20, width: 50}, style: {color: 'green'}}
-        // ]},
-        // {type: 'FILLRECT', config: {x: 20, y: 140, height: 20, width: 50}, style: {color: 'gray'}},
-        // {type: 'IMAGE', config: {x: 20, y: 180, height: 800, width: 300, source: bg}}
+        {
+          "type": "FILLRECT",
+          "label": "头像底部",
+          "x": "150",
+          "y": "150",
+          "r": "40",
+          "sAngle": "0",
+          "eAngle": "360",
+          "backgroundColor": "#ffffff",
+          "opacity": "1"
+        },
+        {
+          "type": "IMAGE",
+          "label": "头像显示",
+          "url": "https://oss.turingsenseai.com/1597910548470148198.png",
+          "x": "112",
+          "y": "112",
+          "width": "76",
+          "height": "76",
+          "borderRadius": "76"
+        },
+        {
+          "type": "TEXT",
+          "label": "昵称",
+          "x": "220",
+          "y": "140",
+          "text": "rookieLink",
+          "fontColor": "#ffffff",
+          "fontSize": "30",
+          "textAlign": "left",
+          "lineNum": "1"
+        }
       ]
-    }, this)
+    }, this.$scope, () => {
+      console.log('绘制成功！')
+    })
   }
 
-  componentDidHide () { }
+  drawPoster() {
+    createPoster('canvas-show', {
+      "type": "MAIN",
+      "label": "海报整体配置",
+      "width": "750",
+      "height": "1334",
+      "backgroundColor": "pink",
+      "elements": [
+        {
+          "type": "IMAGE",
+          "label": "背景图片",
+          "url": "https://oss.turingsenseai.com/1597910548470148198.png",
+          "x": "0",
+          "y": "0",
+          "width": "750",
+          "height": "1334"
+        },
+        {
+          "type": "FILLRECT",
+          "label": "头像底部",
+          "x": "150",
+          "y": "150",
+          "r": "40",
+          "sAngle": "0",
+          "eAngle": "360",
+          "backgroundColor": "#ffffff",
+          "opacity": "1"
+        },
+        {
+          "type": "IMAGE",
+          "label": "头像显示",
+          "url": "https://oss.turingsenseai.com/1597910548470148198.png",
+          "x": "112",
+          "y": "112",
+          "width": "76",
+          "height": "76",
+          "borderRadius": "76"
+        },
+        {
+          "type": "TEXT",
+          "label": "昵称",
+          "x": "220",
+          "y": "140",
+          "text": "rookieLink",
+          "fontColor": "#ffffff",
+          "fontSize": "30",
+          "textAlign": "left",
+          "lineNum": "1"
+        }
+      ]
+    }, this, () => {
+      console.log('绘制成功！')
+    })
+  }
+
+
+  componentDidHide () {}
 
   /**
    * 指定config的类型声明为: Taro.Config
@@ -62,7 +147,7 @@ export default class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Text>绘制海报</Text>
+        <Text onClick={this.drawPoster.bind(this)}>绘制海报</Text>
         <Canvas className="canvas-poster" canvas-id="canvas-show" style="width:750rpx; height: 1334rpx"></Canvas>
 
       </View>

@@ -160,4 +160,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ })
 
-},[["./src/app.tsx","runtime","taro","vendors","common"]]]);;;;;;;;;;;;;;;
+},[["./src/app.tsx","runtime","taro","vendors","common"]]]);;;
